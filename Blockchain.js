@@ -10,7 +10,7 @@ if (ethereum) {
   isBrowser().web3 = new Web3(isBrowser().web3.currentProvider);
 }
 
-const Address = "Enter your contract address";
+const Address = "0xA38a46D5CB5d2a5e336E8cCB3211FE5dA7561836";
 
 export const getCount = async () => {
   const provider =
@@ -19,7 +19,7 @@ export const getCount = async () => {
       : ethers.providers.getDefaultProvider();
   const signer = provider.getSigner();
   const Role = new ethers.Contract(Address, abi, signer);
-  const count = await Role.getCount();
+  const count = await Role.display();
   return count;
 };
 
@@ -35,7 +35,7 @@ export const increment = async () => {
   const Role = new ethers.Contract(Address, abi, signer);
   console.log(Role);
 
-  const Inc = await Role.increment();
+  const Inc = await Role.up();
   return Inc;
 };
 export const decrement = async () => {
@@ -50,6 +50,6 @@ export const decrement = async () => {
   const Role = new ethers.Contract(Address, abi, signer);
   console.log(Role);
 
-  const Dec = await Role.decrement();
+  const Dec = await Role.down();
   return Dec;
 };
