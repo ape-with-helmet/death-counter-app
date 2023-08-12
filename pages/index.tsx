@@ -79,7 +79,7 @@ const Home: NextPage = () => {
           }}
         >
           {" "}
-          YOU HAVE ADDED {count} PERSON(s) TO THE DEATHNOTE
+          YOU HAVE PUT {count} PERSON(s) TO THE DEATHROW!
         </p>
       </main>
 
